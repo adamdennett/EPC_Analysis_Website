@@ -10,3 +10,5 @@
 /.quarto/
 
 keys.r
+output.csv
+epc_coords.csv
