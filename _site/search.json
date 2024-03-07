@@ -61,5 +61,12 @@
     "title": "Spatial Analysis of Building Energy Performance",
     "section": "Mapping Your New Data",
     "text": "Mapping Your New Data\n\nIt is possible to map your data directly in R, however, in this exercise we are going to eventually map it in QGIS.\nWe can have a quick glimpse at the data though by converting our new joined dataset into a simple features (sf) object and viewing it.\n\n\nlibrary(sf)\n\nLinking to GEOS 3.11.2, GDAL 3.6.2, PROJ 9.2.0; sf_use_s2() is TRUE\n\n#convert the csv with coordinates in it to an sf object\nepc_sf <- st_as_sf(epc_coords, coords=c(\"x_coordinate\", \"y_coordinate\"), crs=27700)\n\n#set the CRS to british national grid\nst_crs(Local_sf)\n\nCoordinate Reference System:\n  User input: 4326 \n  wkt:\nGEOGCS[\"WGS 84\",\n      DATUM[\"WGS_1984\",\n        SPHEROID[\"WGS 84\",6378137,298.257223563,\n          AUTHORITY[\"EPSG\",\"7030\"]],\n        AUTHORITY[\"EPSG\",\"6326\"]],\n      PRIMEM[\"Greenwich\",0,\n        AUTHORITY[\"EPSG\",\"8901\"]],\n      UNIT[\"degree\",0.0174532925199433,\n        AUTHORITY[\"EPSG\",\"9122\"]],\n      AXIS[\"Latitude\",NORTH],\n      AXIS[\"Longitude\",EAST],\n    AUTHORITY[\"EPSG\",\"4326\"]]\n\nLocal_sf <- st_transform(Local_sf, 27700)\n\n#clip it as some weird places are in the dataset - data errors. \nepc_sf_clip <- epc_sf[Local_sf,]\n\n\n#try and map it with tmap\nlibrary(tmap)\n\n# set to plot otherwise if you set to view, it will almost certainly crash. \ntmap_mode(\"plot\")\n\ntmap mode set to plotting\n\nqtm(epc_sf_clip)"
+  },
+  {
+    "objectID": "EPCSpatialAnalysis.html#qgis",
+    "href": "EPCSpatialAnalysis.html#qgis",
+    "title": "Spatial Analysis of Building Energy Performance",
+    "section": "QGIS",
+    "text": "QGIS\nFirst, download and install QGIS from the QGIS website for whatever operating system you have on your computer.\n\nOnce you have downloaded and installed QGIS, run the program and open up a new blank project"
   }
 ]
