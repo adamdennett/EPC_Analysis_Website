@@ -254,10 +254,22 @@ qtm(epc_sf_clip)
 
 ## QGIS
 
-First, download and install QGIS from the [QGIS website](https://qgis.org/en/site/index.html) for whatever operating system you have on your computer.
+-   First, download and install QGIS from the [QGIS website](https://qgis.org/en/site/index.html) for whatever operating system you have on your computer.
 
-![](images/QGIS_Org_Frontpage.png)
+![](images/QGIS_Org_Frontpage.png){width="100%"}
 
-Once you have downloaded and installed QGIS, run the program and open up a new blank project
+-   Once you have downloaded and installed QGIS, run the program and open up a new blank project
 
 ![](images/QGIS_Blank_Proj.png)
+
+-   We will need the [Vector Tiles Reader](https://github.com/geometalab/Vector-Tiles-Reader-QGIS-Plugin/) plugin to allow us to get some data from OS Open Zoomstack.
+
+-   Go to Plugins \> Manage and Install Plugins from the top drop down menu
+
+    ![](images/plugins.png)
+
+-   Search for Vector Tiles Reader and click the button at the bottom right to install it for use in QGIS
+
+    ![](images/vector_tiles_reader.png)
+
+-   

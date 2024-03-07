@@ -67,6 +67,6 @@
     "href": "EPCSpatialAnalysis.html#qgis",
     "title": "Spatial Analysis of Building Energy Performance",
     "section": "QGIS",
-    "text": "QGIS\nFirst, download and install QGIS from the QGIS website for whatever operating system you have on your computer.\n\nOnce you have downloaded and installed QGIS, run the program and open up a new blank project"
+    "text": "QGIS\n\nFirst, download and install QGIS from the QGIS website for whatever operating system you have on your computer.\n\n\n\nOnce you have downloaded and installed QGIS, run the program and open up a new blank project\n\n\n\nWe will need the Vector Tiles Reader plugin to allow us to get some data from OS Open Zoomstack.\nGo to Plugins > Manage and Install Plugins from the top drop down menu\n\nSearch for Vector Tiles Reader and click the button at the bottom right to install it for use in QGIS"
   }
 ]
