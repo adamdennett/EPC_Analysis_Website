@@ -181,7 +181,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   <li><a href="#part-2---making-some-maps" id="toc-part-2---making-some-maps" class="nav-link" data-scroll-target="#part-2---making-some-maps">Part 2 - Making Some Maps</a>
   <ul class="collapse">
-  <li><a href="#qgis" id="toc-qgis" class="nav-link" data-scroll-target="#qgis">QGIS</a></li>
+  <li><a href="#qgis" id="toc-qgis" class="nav-link" data-scroll-target="#qgis">QGIS</a>
+  <ul class="collapse">
+  <li><a href="#os-open-zoomstack---connecting-for-basemap-data" id="toc-os-open-zoomstack---connecting-for-basemap-data" class="nav-link" data-scroll-target="#os-open-zoomstack---connecting-for-basemap-data">OS Open Zoomstack - Connecting for Basemap Data</a></li>
+  <li><a href="#importing-your-epc-data-and-creating-a-new-points-dataset" id="toc-importing-your-epc-data-and-creating-a-new-points-dataset" class="nav-link" data-scroll-target="#importing-your-epc-data-and-creating-a-new-points-dataset">Importing your EPC Data and Creating a New Points Dataset</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -491,6 +495,8 @@ GEOGCS["WGS 84",
 <li>Once you have downloaded and installed QGIS, run the program and open up a new blank project</li>
 </ul>
 <p><img src="images/QGIS_Blank_Proj.png" class="img-fluid"></p>
+<section id="os-open-zoomstack---connecting-for-basemap-data" class="level3">
+<h3 class="anchored" data-anchor-id="os-open-zoomstack---connecting-for-basemap-data">OS Open Zoomstack - Connecting for Basemap Data</h3>
 <ul>
 <li><p>The following information has been reproduced from <a href="https://www.ordnancesurvey.co.uk/documents/os-open-zoomstack-vector-tile-api.pdf">this PDF</a> on the OS website -</p></li>
 <li><p>We will need the <a href="https://github.com/geometalab/Vector-Tiles-Reader-QGIS-Plugin/">Vector Tiles Reader</a> plugin to allow us to get some data from OS Open Zoomstack.</p></li>
@@ -513,8 +519,17 @@ GEOGCS["WGS 84",
 <li><p>This should then add all zoomstack layers to your map</p>
 <p><img src="images/zoomstack_layers.png" class="img-fluid"></p></li>
 </ul>
+</section>
+<section id="importing-your-epc-data-and-creating-a-new-points-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="importing-your-epc-data-and-creating-a-new-points-dataset">Importing your EPC Data and Creating a New Points Dataset</h3>
+<ul>
+<li><p>Whether you ran the scripts in Part 1 of this guide or downloaded my pre-made dataset, you should have a file called <strong><em>epc_coords.csv</em></strong> stored somewhere on your computer.</p></li>
+<li><p>We need to import this file using the QGIS Data Source Manager - whatever you do, don’t just try and drag this .csv file straight into the layers window in QGIS. It will let you do it, but it will import every column in your table as text data - which will cause us all kinds of problems later on.</p></li>
+<li><p>Click on the data source manager icon - <img src="images/data_source_manager.png" class="img-fluid"> or find it under Layers &gt; Data Source Manager from the top dropdown menu.</p></li>
+</ul>
 
 
+</section>
 </section>
 </section>
 
