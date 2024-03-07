@@ -262,9 +262,11 @@ qtm(epc_sf_clip)
 
 ![](images/QGIS_Blank_Proj.png)
 
+-   The following information has been reproduced from [this PDF](https://www.ordnancesurvey.co.uk/documents/os-open-zoomstack-vector-tile-api.pdf) on the OS website -
+
 -   We will need the [Vector Tiles Reader](https://github.com/geometalab/Vector-Tiles-Reader-QGIS-Plugin/) plugin to allow us to get some data from OS Open Zoomstack.
 
--   Go to Plugins \> Manage and Install Plugins from the top drop down menu
+-   Go to *Plugins \> Manage and Install Plugins* from the top drop down menu
 
     ![](images/plugins.png)
 
@@ -272,4 +274,30 @@ qtm(epc_sf_clip)
 
     ![](images/vector_tiles_reader.png)
 
--   
+-   Go back into the main project window and select *Vector \> Vector Tiles Reader \> Add Vector Tiles Layer...* from the top menu
+
+    ![](images/select_vector_tiles_reader.png)
+
+-   In the dialogue box, click on the Server tab and then click on 'New'
+
+    ![](images/add_layers.png)
+
+-   In the create connection dialogue box paste the URL below into the TileJsonURL box:
+
+    https://s3-eu-west-1.amazonaws.com/tiles.os.uk/v2/data/vector/open-zoomstack/config.json
+
+-   Give it a name such as 'OS Open Zoomstack' and Click Save
+
+    ![](images/create_connection.png)
+
+-   Find your new 'OS Open Zoom' Stack connection in the server tab and click Connect
+
+    ![](images/connect.png)
+
+-   In the new dialogue box that pops up click on the top layer and then holding shift use the down arrow to highlight every layer in the box. Click the base map defaults button at the bottom and then the Add button
+
+    ![](images/add_layers_vector_source.png)
+
+-   This should then add all zoomstack layers to your map
+
+    ![](images/zoomstack_layers.png)
