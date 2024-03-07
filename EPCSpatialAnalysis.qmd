@@ -251,3 +251,13 @@ qtm(epc_sf_clip)
 ```
 
 # Part 2 - Making Some Maps
+
+## QGIS
+
+First, download and install QGIS from the [QGIS website](https://qgis.org/en/site/index.html) for whatever operating system you have on your computer.
+
+![](images/QGIS_Org_Frontpage.png)
+
+Once you have downloaded and installed QGIS, run the program and open up a new blank project
+
+![](images/QGIS_Blank_Proj.png)
