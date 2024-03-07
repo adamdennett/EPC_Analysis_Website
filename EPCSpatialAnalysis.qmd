@@ -262,6 +262,8 @@ qtm(epc_sf_clip)
 
 ![](images/QGIS_Blank_Proj.png)
 
+### OS Open Zoomstack - Connecting for Basemap Data
+
 -   The following information has been reproduced from [this PDF](https://www.ordnancesurvey.co.uk/documents/os-open-zoomstack-vector-tile-api.pdf) on the OS website -
 
 -   We will need the [Vector Tiles Reader](https://github.com/geometalab/Vector-Tiles-Reader-QGIS-Plugin/) plugin to allow us to get some data from OS Open Zoomstack.
@@ -284,7 +286,7 @@ qtm(epc_sf_clip)
 
 -   In the create connection dialogue box paste the URL below into the TileJsonURL box:
 
-    https://s3-eu-west-1.amazonaws.com/tiles.os.uk/v2/data/vector/open-zoomstack/config.json
+    ***https://s3-eu-west-1.amazonaws.com/tiles.os.uk/v2/data/vector/open-zoomstack/config.json***
 
 -   Give it a name such as 'OS Open Zoomstack' and Click Save
 
@@ -301,3 +303,11 @@ qtm(epc_sf_clip)
 -   This should then add all zoomstack layers to your map
 
     ![](images/zoomstack_layers.png)
+
+### Importing your EPC Data and Creating a New Points Dataset
+
+-   Whether you ran the scripts in Part 1 of this guide or downloaded my pre-made dataset, you should have a file called ***epc_coords.csv*** stored somewhere on your computer.
+
+-   We need to import this file using the QGIS Data Source Manager - whatever you do, don't just try and drag this .csv file straight into the layers window in QGIS. It will let you do it, but it will import every column in your table as text data - which will cause us all kinds of problems later on.
+
+-   Click on the data source manager icon - ![](images/data_source_manager.png) or find it under Layers \> Data Source Manager from the top dropdown menu.

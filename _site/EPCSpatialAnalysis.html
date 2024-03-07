@@ -498,8 +498,20 @@ GEOGCS["WGS 84",
 <p><img src="images/plugins.png" class="img-fluid"></p></li>
 <li><p>Search for Vector Tiles Reader and click the button at the bottom right to install it for use in QGIS</p>
 <p><img src="images/vector_tiles_reader.png" class="img-fluid"></p></li>
-<li><p>Go back into the main project window and select Vector &gt; Vector Tiles Reader &gt; Add Vector Tiles Layer… from the top menu</p></li>
-<li><p><img src="images/select_vector_tiles_reader.png" class="img-fluid"></p></li>
+<li><p>Go back into the main project window and select <em>Vector &gt; Vector Tiles Reader &gt; Add Vector Tiles Layer…</em> from the top menu</p>
+<p><img src="images/select_vector_tiles_reader.png" class="img-fluid"></p></li>
+<li><p>In the dialogue box, click on the Server tab and then click on ‘New’</p>
+<p><img src="images/add_layers.png" class="img-fluid"></p></li>
+<li><p>In the create connection dialogue box paste the URL below into the TileJsonURL box:</p>
+<p><strong><em>https://s3-eu-west-1.amazonaws.com/tiles.os.uk/v2/data/vector/open-zoomstack/config.json</em></strong></p></li>
+<li><p>Give it a name such as ‘OS Open Zoomstack’ and Click Save</p>
+<p><img src="images/create_connection.png" class="img-fluid"></p></li>
+<li><p>Find your new ‘OS Open Zoom’ Stack connection in the server tab and click Connect</p>
+<p><img src="images/connect.png" class="img-fluid"></p></li>
+<li><p>In the new dialogue box that pops up click on the top layer and then holding shift use the down arrow to highlight every layer in the box. Click the base map defaults button at the bottom and then the Add button</p>
+<p><img src="images/add_layers_vector_source.png" class="img-fluid"></p></li>
+<li><p>This should then add all zoomstack layers to your map</p>
+<p><img src="images/zoomstack_layers.png" class="img-fluid"></p></li>
 </ul>
 
 
