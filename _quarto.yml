@@ -5,8 +5,8 @@ website:
   title: "Spatial Analysis of EPC Data"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
+      - text: Home
+        file: index.qmd
       - EPCSpatialAnalysis.qmd
 
 format:
