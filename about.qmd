@@ -1,5 +1,0 @@
----
-title: "About"
----
-
-There really is nothing to see here
