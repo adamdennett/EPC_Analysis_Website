@@ -11,7 +11,7 @@ website:
 
 format:
   html:
-    theme: sketchy
+    theme: cosmo
     css: styles.css
     toc: true
 
