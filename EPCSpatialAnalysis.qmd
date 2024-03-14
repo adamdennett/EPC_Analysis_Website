@@ -311,3 +311,29 @@ qtm(epc_sf_clip)
 -   We need to import this file using the QGIS Data Source Manager - whatever you do, don't just try and drag this .csv file straight into the layers window in QGIS. It will let you do it, but it will import every column in your table as text data - which will cause us all kinds of problems later on.
 
 -   Click on the data source manager icon - ![](images/data_source_manager.png) or find it under Layers \> Data Source Manager from the top dropdown menu.
+
+![](images/data_source_manager_window.png)
+
+-   Something like the box above should appear. In the left-hand icon menu, select '*Delimited Text*' as we will be loading a .csv (comma separated/delimited variables) text file.
+
+-   At the very top of the window, click the three dots (...) in the top right hand corner and navigate to wherever your ***epc_coords.csv*** file is stored.
+
+-   There are a few little bits of housekeeping you now need to take care of **before** clicking the *Add* button at the bottom, or your data will not load in correctly.
+
+    -   Firstly we are going to plot the houses in the EPC dataset as Points on a map. In order to plot these points, you need to tell QGIS, firstly that you want it to plot points, and secondly, which columns to get your points from.
+
+    -   Under 'Geometry Definition', make sure that the radar button for 'Point Coordinates' is selected. Then, you need to choose the correct columns in your data for the x and y coordinates. You actually have two sets of x and y coordinates you could use. The columns labelled x_coordinate and y_coordinate are self-explanatory and contain *Projected* British National Grid Eastings (x) and Northings (y) - if you use these columns as in the example above, make sure your Geometry CRS is set to "EPSG: 27700 - OSGB36 / British National Grid"
+
+    -   You also have latitude (y) and longitude (x) that you could use to plot your points, but these are in the global *Geographic* coordinate system known as WGS84 (EPSG 4326) so if you select these columns, you will need to change the Geometry CRS accordingly.
+
+    -   The final piece of housekeeping that is required is to make sure that all of the columns you import from the CSV are imported as text and numbers (either whole integers or decimal points) correctly.
+
+    -   To do this, at the very bottom of the window, you will see an example of the data that will be imported, with the column header (which hopefully will have been automatically detected by QGIS - if not, you may need to edit under the Record and Fields options). Below the column header is the type of data that QGIS thinks your data is - probably either Text (String), Integer (32 bit) or Decimal (double) - you may also have some Date values too.
+
+    -   Move the slider along and check that all of the data types match the data below - QGIS may have guessed some numbers are text, for example - this is probably where missing values have been stored as "NA". Where this happens, simply click the small arrow next to the data type and change it to the correct type - usually Integer or Decimal. Do this for all incorrect columns (there will be a few). Anything that is a count or a proportion should be a number. If you're not sure, you can always open your CSV in excel first to check - but never save it afterwards as excel will cause you even more problems.
+
+    -   Once you have corrected all of the fields that will be read in, click the "Add" button in the bottom right of the window. At this point, you might get a window that pops up explaining that QGIS is going to try and convert your data to another coordinate system. This is fine, just leave it on the default and click "OK".
+
+    -   Close the data source manager and you should see a large number of points plotted in your main window.
+
+## Creating Your Map
