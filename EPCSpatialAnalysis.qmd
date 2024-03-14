@@ -337,3 +337,17 @@ qtm(epc_sf_clip)
     -   Close the data source manager and you should see a large number of points plotted in your main window.
 
 ## Creating Your Map
+
+### Basic Plotting of EPCs and Contextual Information
+
+-   We can now begin to build our map of domestic energy performance for any town or village in our study area - you could look at the whole study area too, but there are a lot of data points, so zooming in might be best at this stage. 
+
+-   In the Layers panel on the left of QGIS, your epc_coords layer should be on the top, if it is not, you can simply left-click and drag it to the top. 
+
+-   Right Clicking on your layer will allow you to zoom to your layer if you can't find it on your map. 
+
+-   At this point you can add some contextual information from Zoomstack. You may already have all layers showing, so un-tick most of them and perhaps just leave information such as buildings, railways and roads. Your resulting map may look a little like the one below:
+
+![](images/epc_and_zoomstack1.png)
+### 
+
