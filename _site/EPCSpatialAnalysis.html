@@ -194,7 +194,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#print-layout" id="toc-print-layout" class="nav-link" data-scroll-target="#print-layout">Print Layout</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#part-3---taking-the-analysis-further" id="toc-part-3---taking-the-analysis-further" class="nav-link" data-scroll-target="#part-3---taking-the-analysis-further">Part 3 - Taking the Analysis Further</a></li>
+  <li><a href="#part-3---taking-the-analysis-further" id="toc-part-3---taking-the-analysis-further" class="nav-link" data-scroll-target="#part-3---taking-the-analysis-further">Part 3 - Taking the Analysis Further</a>
+  <ul class="collapse">
+  <li><a href="#further-research-questions" id="toc-further-research-questions" class="nav-link" data-scroll-target="#further-research-questions">Further Research Questions</a>
+  <ul class="collapse">
+  <li><a href="#calculating-the-average-energy-efficiency-for-homes-in-your-townvillage" id="toc-calculating-the-average-energy-efficiency-for-homes-in-your-townvillage" class="nav-link" data-scroll-target="#calculating-the-average-energy-efficiency-for-homes-in-your-townvillage">Calculating the average energy efficiency for homes in your town/village</a></li>
+  <li><a href="#where-are-the-homes-that-could-make-the-biggest-energy-efficiency-improvements" id="toc-where-are-the-homes-that-could-make-the-biggest-energy-efficiency-improvements" class="nav-link" data-scroll-target="#where-are-the-homes-that-could-make-the-biggest-energy-efficiency-improvements">Where are the homes that could make the biggest energy efficiency improvements?</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -508,11 +515,11 @@ GEOGCS["WGS 84",
 <ul>
 <li><p>The following information has been reproduced from <a href="https://www.ordnancesurvey.co.uk/documents/os-open-zoomstack-vector-tile-api.pdf">this PDF</a> on the OS website -</p></li>
 <li><p>We will need the <a href="https://github.com/geometalab/Vector-Tiles-Reader-QGIS-Plugin/">Vector Tiles Reader</a> plugin to allow us to get some data from OS Open Zoomstack.</p></li>
-<li><p>Go to <em>Plugins &gt; Manage and Install Plugins</em> from the top drop down menu</p>
+<li><p>Go to <strong><em>Plugins &gt; Manage and Install Plugins</em></strong> from the top drop down menu</p>
 <p><img src="images/plugins.png" class="img-fluid"></p></li>
 <li><p>Search for Vector Tiles Reader and click the button at the bottom right to install it for use in QGIS</p>
 <p><img src="images/vector_tiles_reader.png" class="img-fluid"></p></li>
-<li><p>Go back into the main project window and select <em>Vector &gt; Vector Tiles Reader &gt; Add Vector Tiles Layer…</em> from the top menu</p>
+<li><p>Go back into the main project window and select <strong><em>Vector &gt; Vector Tiles Reader &gt; Add Vector Tiles Layer…</em></strong> from the top menu</p>
 <p><img src="images/select_vector_tiles_reader.png" class="img-fluid"></p></li>
 <li><p>In the dialogue box, click on the Server tab and then click on ‘New’</p>
 <p><img src="images/add_layers.png" class="img-fluid"></p></li>
@@ -533,13 +540,13 @@ GEOGCS["WGS 84",
 <ul>
 <li><p>Whether you ran the scripts in Part 1 of this guide or downloaded my pre-made dataset, you should have a file called <strong><em>epc_coords.csv</em></strong> stored somewhere on your computer.</p></li>
 <li><p>We need to import this file using the QGIS Data Source Manager - whatever you do, don’t just try and drag this .csv file straight into the layers window in QGIS. It will let you do it, but it will import every column in your table as text data - which will cause us all kinds of problems later on.</p></li>
-<li><p>Click on the data source manager icon - <img src="images/data_source_manager.png" class="img-fluid"> or find it under Layers &gt; Data Source Manager from the top dropdown menu.</p></li>
+<li><p>Click on the data source manager icon - <img src="images/data_source_manager.png" class="img-fluid"> or find it under <strong><em>Layers &gt; Data Source Manager</em></strong> from the top dropdown menu.</p></li>
 </ul>
 <p><img src="images/data_source_manager_window.png" class="img-fluid"></p>
 <ul>
 <li><p>Something like the box above should appear. In the left-hand icon menu, select ‘<em>Delimited Text</em>’ as we will be loading a .csv (comma separated/delimited variables) text file.</p></li>
 <li><p>At the very top of the window, click the three dots (…) in the top right hand corner and navigate to wherever your <strong><em>epc_coords.csv</em></strong> file is stored.</p></li>
-<li><p>There are a few little bits of housekeeping you now need to take care of <strong>before</strong> clicking the <em>Add</em> button at the bottom, or your data will not load in correctly.</p>
+<li><p>There are a few little bits of housekeeping you now need to take care of <strong>before</strong> clicking the <strong><em>Add</em></strong> button at the bottom, or your data will not load in correctly.</p>
 <ul>
 <li><p>Firstly we are going to plot the houses in the EPC dataset as Points on a map. In order to plot these points, you need to tell QGIS, firstly that you want it to plot points, and secondly, which columns to get your points from.</p></li>
 <li><p>Under ‘Geometry Definition’, make sure that the radar button for ‘Point Coordinates’ is selected. Then, you need to choose the correct columns in your data for the x and y coordinates. You actually have two sets of x and y coordinates you could use. The columns labelled x_coordinate and y_coordinate are self-explanatory and contain <em>Projected</em> British National Grid Eastings (x) and Northings (y) - if you use these columns as in the example above, make sure your Geometry CRS is set to “EPSG: 27700 - OSGB36 / British National Grid”</p></li>
@@ -570,18 +577,18 @@ GEOGCS["WGS 84",
 <ul>
 <li><p>Now you have your data loaded, we can explore some of the different variables in the EPC dataset. Let’s start with Age.</p></li>
 <li><p>Before we get any further, you should download the QGIS Style File for EPC Building Age Categories - EPC_Building_Age_Categories.qml - from here: <a href="https://github.com/adamdennett/EPC_Analysis_Website/tree/master/qgis_epc_styles" class="uri">https://github.com/adamdennett/EPC_Analysis_Website/tree/master/qgis_epc_styles</a>. Save that file (and all of the others in the folder too, if you wish), to a suitable location on your hard-drive.</p></li>
-<li><p>Now, right-click the <em>epc_coords</em> layer and click on <em>Properties</em></p></li>
+<li><p>Now, right-click the <em>epc_coords</em> layer and click on <strong><em>Properties</em></strong></p></li>
 </ul>
 <p><img src="images/properties.png" class="img-fluid"></p>
 <ul>
-<li><p>When the layer properties window opens, select <em>symbology</em> from near the top of the left-hand menu.</p></li>
-<li><p>When the symbology window opens, at the very top, select <em>Categorised</em> as we are going to give different categories a specific colour value.</p></li>
+<li><p>When the layer properties window opens, select <strong><em>symbology</em></strong> from near the top of the left-hand menu.</p></li>
+<li><p>When the symbology window opens, at the very top, select <strong><em>Categorised</em></strong> as we are going to give different categories a specific colour value.</p></li>
 <li><p>In the Value drop down menu, find the variable <em>construction_age_band</em> and select it.</p></li>
 </ul>
 <p><img src="images/epc_symbology_age.png" class="img-fluid"></p>
 <ul>
 <li><p>Now at this point you could choose your own Colour Ramp, number of categories etc, but this can be a little time consuming. To save time, we can load the QGIS Style file I created and apply it to your data.</p></li>
-<li><p>At the very bottom of your layer properties window is a small menu button labelled <em>Style</em> - click <em>Load Style</em> and the Database Styles Manager will pop up.</p></li>
+<li><p>At the very bottom of your layer properties window is a small menu button labelled <strong><em>Style</em></strong> - click <em>Load Style</em> and the Database Styles Manager will pop up.</p></li>
 </ul>
 <p><img src="images/styles_manager.png" class="img-fluid"></p>
 <ul>
@@ -594,7 +601,7 @@ GEOGCS["WGS 84",
 <h3 class="anchored" data-anchor-id="mapping-other-variables">Mapping Other Variables</h3>
 <ul>
 <li><p>Now you have a basic age map, you can try mapping any of your other variables.</p></li>
-<li><p>Any Numeric Variables you can map using a <em>Graduated</em> Colour scheme from the top dropdown in the symbology menu. Any text variable can be mapped with a <em>Categorised</em> colour scheme.</p></li>
+<li><p>Any Numeric Variables you can map using a <strong><em>Graduated</em></strong> Colour scheme from the top dropdown in the symbology menu. Any text variable can be mapped with a <strong><em>Categorised</em></strong> colour scheme.</p></li>
 <li><p>We can map energy efficiency with both as there are both numeric (<em>current_energy_efficiency</em>) and text (<em>current_energy_rating</em>) variables for energy efficiency.</p></li>
 <li><p>Selecting the numeric <em>current_energy_efficiency</em> variable and the graduated colour scheme, we can colour the values according to set ranges and colours by choosing:</p>
 <ul>
@@ -602,11 +609,11 @@ GEOGCS["WGS 84",
 <li>a number of classes to group by (7 have been selected below)</li>
 <li>a way of choosing the bin sizes for the group (I’ve chosen Jenks Natural Breaks below)</li>
 </ul></li>
-<li><p>after choosing these options, clicking the <em>Classify</em> button will bin all of your data into the chosen number of classes and colour according to the colour ramp you have chosen, as below.</p></li>
+<li><p>after choosing these options, clicking the <strong><em>Classify</em></strong> button will bin all of your data into the chosen number of classes and colour according to the colour ramp you have chosen, as below.</p></li>
 </ul>
 <p><img src="images/graduated.png" class="img-fluid"></p>
 <ul>
-<li><p>Click the <em>Apply</em> and <em>OK</em> buttons to see your map.</p></li>
+<li><p>Click the <strong><em>Apply</em></strong> and <strong><em>OK</em></strong> buttons to see your map.</p></li>
 <li><p>You can experiment with an almost infinite combination of different variables, ranges, ramps and colour schemes. Try some out for different variables in the dataset. You may find that for categorical variables, you have to manually adjust some of the colours and values.</p></li>
 <li><p>If you want to find out more about playing with symbology, QGIS has some excellent documentation here: <a href="https://docs.qgis.org/3.34/en/docs/training_manual/basic_map/symbology.html" class="uri">https://docs.qgis.org/3.34/en/docs/training_manual/basic_map/symbology.html</a></p></li>
 <li><p>I have created a QGIS Style File which styles the current_energy_efficiency variable according to the values and colours used in the EPC certificate rating - download it from here: <a href="https://github.com/adamdennett/EPC_Analysis_Website/tree/master/qgis_epc_styles" class="uri">https://github.com/adamdennett/EPC_Analysis_Website/tree/master/qgis_epc_styles</a> and load in the same way as you did before to map the style to your variable</p></li>
@@ -621,7 +628,7 @@ GEOGCS["WGS 84",
 <section id="styling-your-roads" class="level4">
 <h4 class="anchored" data-anchor-id="styling-your-roads">Styling your Roads</h4>
 <ul>
-<li><p>Styling your contextual data is done in exactly the same way as styling your EPC Point data. First, right-click a layer you are interested in and slected the <em>Properties</em> option. Your Road layer is a good place to start</p></li>
+<li><p>Styling your contextual data is done in exactly the same way as styling your EPC Point data. First, right-click a layer you are interested in and slected the <strong><em>Properties</em></strong> option. Your Road layer is a good place to start</p></li>
 <li><p>Your Zoomstack data has variables associated with the feature, so, for example, for your roads layer, you could classify your roads by type and colour them in accordingly:</p></li>
 </ul>
 <p><img src="images/road_type.png" class="img-fluid"></p>
@@ -646,7 +653,7 @@ GEOGCS["WGS 84",
 <section id="finishing-and-saving-your-map" class="level2">
 <h2 class="anchored" data-anchor-id="finishing-and-saving-your-map">Finishing and Saving Your Map</h2>
 <ul>
-<li><p>Once you are happy with your map, you should first save your Project to a safe place on your machine via <em>Project &gt; Save As</em> from the top drop down menu.</p></li>
+<li><p>Once you are happy with your map, you should first save your Project to a safe place on your machine via <strong><em>Project &gt; Save As</em></strong> from the top drop down menu.</p></li>
 <li><p>You are now ready to finish your map with the Print Layout Manager</p></li>
 </ul>
 <section id="print-layout" class="level3">
@@ -654,7 +661,7 @@ GEOGCS["WGS 84",
 <section id="adding-moving-and-rescaling-your-map" class="level4">
 <h4 class="anchored" data-anchor-id="adding-moving-and-rescaling-your-map">Adding, moving and rescaling your map</h4>
 <ul>
-<li>Under <em>Project</em> in the top menu, select new Print Layout</li>
+<li>Under <strong><em>Project</em></strong> in the top menu, select new Print Layout</li>
 </ul>
 <p><img src="images/print_layout.png" class="img-fluid"></p>
 <ul>
@@ -677,20 +684,20 @@ GEOGCS["WGS 84",
 <section id="adding-and-editing-a-legend" class="level4">
 <h4 class="anchored" data-anchor-id="adding-and-editing-a-legend">Adding and Editing a Legend</h4>
 <ul>
-<li><p>Using <em>Add Item &gt; Legend</em> you can add a legend that will contain all of the layers in your main map</p></li>
-<li><p>On the right-hand side under <em>Item Properties</em>, untick the ‘Auto Update’ box and then by highlighting elements of the legend you don’t want any more, these can be removed with the red minus button or re-ordered with the arrow buttons</p></li>
+<li><p>Using <strong><em>Add Item &gt; Legend</em></strong> you can add a legend that will contain all of the layers in your main map</p></li>
+<li><p>On the right-hand side under <strong><em>Item Properties</em></strong>, untick the ‘Auto Update’ box and then by highlighting elements of the legend you don’t want any more, these can be removed with the red minus button or re-ordered with the arrow buttons</p></li>
 </ul>
 <p><img src="images/layout_window_legend.png" class="img-fluid"> - Items can also be added back in with the green + button. You can also edit the name of your legend with the edit button.</p>
 </section>
 <section id="scale-and-north-arrow" class="level4">
 <h4 class="anchored" data-anchor-id="scale-and-north-arrow">Scale and North Arrow</h4>
 <ul>
-<li><p>You can now complete your map with a scale and a north arrow using the same <em>Add Item</em> drop down menu. Various different styles are available.</p></li>
+<li><p>You can now complete your map with a scale and a north arrow using the same <strong><em>Add Item</em></strong> drop down menu. Various different styles are available.</p></li>
 <li><p>Note - Your scale will only be in metres or kilometres if you used British National Grid when you imported your CSV data originally.</p></li>
 </ul>
 <p><img src="images/layout_window_finished.png" class="img-fluid"></p>
 <ul>
-<li>When you are happy with your map, you can save it by exporting it as an Image or a PDF via <em>Layout &gt; Export…</em></li>
+<li>When you are happy with your map, you can save it by exporting it as an Image or a PDF via <strong><em>Layout &gt; Export…</em></strong></li>
 </ul>
 <p><img src="images/layout_export.png" class="img-fluid"></p>
 <ul>
@@ -702,8 +709,77 @@ GEOGCS["WGS 84",
 </section>
 <section id="part-3---taking-the-analysis-further" class="level1">
 <h1>Part 3 - Taking the Analysis Further</h1>
+<ul>
+<li><p>By this point, you should have some great looking maps which show you the local geography of the energy efficiency (or any other variables you have played with).</p></li>
+<li><p>This is great descriptive analysis and is always the first stage before asking some more tricky questions</p></li>
+</ul>
+<section id="further-research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="further-research-questions">Further Research Questions</h2>
+<ul>
+<li>There are lots of further questions you could ask of your data such as:
+<ul>
+<li>What is the average Energy Efficiency of Houses in my town/village?</li>
+<li>Where are the houses that could make the biggest energy efficiency improvements?</li>
+</ul></li>
+</ul>
+<section id="calculating-the-average-energy-efficiency-for-homes-in-your-townvillage" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-the-average-energy-efficiency-for-homes-in-your-townvillage">Calculating the average energy efficiency for homes in your town/village</h3>
+<ul>
+<li><p>To do this, we can take advantage of some of the analysis funcions built into QGIS in the <strong><em>Processing Toolbox</em></strong></p></li>
+<li><p>First of all, however, we need to select the buildings we want to include in our analysis. We can do this with the <strong><em>Select Features</em></strong> button at the top of the map window</p></li>
+</ul>
+<p><img src="images/select_features.png" class="img-fluid"> - You can use any of the options that pop up - the top option just allows you to draw a rectangular box, so we will use that for now. If you want something a bit more accurate, the other options will probably work well</p>
+<ul>
+<li>Select the tool you want and make sure you have your <strong><em>epc_coords</em></strong> layer selected (clicked on) as the active layer. Draw or drag your selection shape over the area you are interested in and everything within your shape should turn yellow, indicating it has been selected</li>
+</ul>
+<p><img src="images/selected_features.png" class="img-fluid"></p>
+<ul>
+<li><p>Now we can run some analysis on the selected properties</p></li>
+<li><p>If it is not already open, you can open the processing toolbox via the <strong><em>Processing</em></strong> drop-down menu at the top. Once open, expand the tools under <strong><em>Plots</em></strong> and double click on the <strong><em>Mean and Standard Deviation Plot</em></strong></p></li>
+</ul>
+<p><img src="images/processing_toolbox.png" class="img-fluid"></p>
+<ul>
+<li>In the Mean and Standard Deviation Plot dialogue box, try filling in the parameters as below before clicking <strong><em>Run</em></strong></li>
+</ul>
+<p><img src="images/mean_std_dv_plot_params.png" class="img-fluid"> - In the results viewer in the bottom right, double click the plot you have just created and it will open up in a web browser on your computer</p>
+<p><img src="images/boxplot.png" class="img-fluid"></p>
+<ul>
+<li>Hovering over the boxplot will reveal the mean and median EPC values as well as the inter-quartile range (where 50% of the properties fall between) along with some minimum and maximum values.</li>
+</ul>
+</section>
+<section id="where-are-the-homes-that-could-make-the-biggest-energy-efficiency-improvements" class="level3">
+<h3 class="anchored" data-anchor-id="where-are-the-homes-that-could-make-the-biggest-energy-efficiency-improvements">Where are the homes that could make the biggest energy efficiency improvements?</h3>
+<ul>
+<li>Before going any further, we need to de-select the features we just selected. Do this using the <strong><em>Deselect Features from All Layers</em></strong> button</li>
+</ul>
+<p><img src="images/deselect.png" class="img-fluid"></p>
+<ul>
+<li><p>To answer this question, we need to calculate a new field which subtracts the values for <strong>Current Energy Efficiency</strong> from <strong>Potential Energy Efficiency</strong>. We will call our new variable <strong>upgrade_potential</strong></p></li>
+<li><p>Open the Attribute Table for your <strong><em>epc_coords</em></strong> layer by right-clicking on it and selecting <strong><em>Open Attribute Table</em></strong></p></li>
+<li><p>Something like the attribute table below should open:</p></li>
+</ul>
+<p><img src="images/attribute_table.png" class="img-fluid"></p>
+<ul>
+<li>Click the Open Field Calculator Icon</li>
+</ul>
+<p><img src="images/open_field_calc.png" class="img-fluid"></p>
+<ul>
+<li>Fill out the Dialoge Box that opens just like the one below:</li>
+</ul>
+<p><img src="images/field_calc.png" class="img-fluid"> - Call your Output Field <strong>upgrade_potential</strong>. We will make it a decimal (double) type. In the expression box, double click the field name for <strong><em>“current_energy_efficiency”</em></strong> first under <strong><em>Fields and Values</em></strong>, insert a minus symbol using the buttons at the bottom and then <strong><em>“potential_energy_efficiency”</em></strong></p>
+<ul>
+<li><p>When that expression is complete, click <strong><em>OK</em></strong> and a new field called <em>upgrade_potential</em> should be calculated at the end of your <strong><em>epc_coords</em></strong> file.</p></li>
+<li><p>You can now generate a choropleth map of your new variable to see where the places with the most potential for improving their energy efficiency lie</p></li>
+</ul>
+<p><img src="images/upgrade_potential.png" class="img-fluid"></p>
+<ul>
+<li>Using the Information Icon <img src="images/info.png" class="img-fluid"> we can explore places with the most potential and find out how much they could improve their energy efficiency and what they might do to improve - e.g.&nbsp;Install Double Glazing or are more efficient heating system.</li>
+</ul>
+<p><img src="images/improvements.png" class="img-fluid"></p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
