@@ -28,7 +28,7 @@
       <category type="string" symbol="23" label="2022" value="2022" render="true" uuid="{ca6f7433-4d38-4266-bb32-a9c034b2a3fc}"/>
       <category type="string" symbol="24" label="2023" value="2023" render="true" uuid="{5a04243e-e589-4528-bd80-02d2f48ba9b5}"/>
       <category type="string" symbol="25" label="NA" value="NA" render="true" uuid="{d9b770f5-9b01-4ff9-9030-b60181b19fc9}"/>
-      <category type="NULL" symbol="26" label="" value="NULL" render="true" uuid="{8b315142-e3db-4555-8645-ccfe272d3b6d}"/>
+      <category type="string" symbol="26" label="" value="" render="true" uuid="{8b315142-e3db-4555-8645-ccfe272d3b6d}"/>
     </categories>
     <symbols>
       <symbol is_animated="0" name="0" frame_rate="10" force_rhr="0" clip_to_extent="1" type="marker" alpha="1">
@@ -246,7 +246,7 @@
             <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
             <Option name="offset_unit" type="QString" value="MM"/>
             <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"/>
-            <Option name="outline_style" type="QString" value="no"/>
+            <Option name="outline_style" type="QString" value="dash"/>
             <Option name="outline_width" type="QString" value="0"/>
             <Option name="outline_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
             <Option name="outline_width_unit" type="QString" value="MM"/>
@@ -285,7 +285,7 @@
             <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
             <Option name="offset_unit" type="QString" value="MM"/>
             <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"/>
-            <Option name="outline_style" type="QString" value="no"/>
+            <Option name="outline_style" type="QString" value="dash"/>
             <Option name="outline_width" type="QString" value="0"/>
             <Option name="outline_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
             <Option name="outline_width_unit" type="QString" value="MM"/>
@@ -753,7 +753,7 @@
             <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
             <Option name="offset_unit" type="QString" value="MM"/>
             <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"/>
-            <Option name="outline_style" type="QString" value="no"/>
+            <Option name="outline_style" type="QString" value="dash"/>
             <Option name="outline_width" type="QString" value="0"/>
             <Option name="outline_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
             <Option name="outline_width_unit" type="QString" value="MM"/>
@@ -792,7 +792,7 @@
             <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
             <Option name="offset_unit" type="QString" value="MM"/>
             <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"/>
-            <Option name="outline_style" type="QString" value="no"/>
+            <Option name="outline_style" type="QString" value="dash"/>
             <Option name="outline_width" type="QString" value="0"/>
             <Option name="outline_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
             <Option name="outline_width_unit" type="QString" value="MM"/>

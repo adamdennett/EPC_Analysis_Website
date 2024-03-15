@@ -250,7 +250,7 @@ tmap_mode("plot")
 qtm(epc_sf_clip)
 ```
 
-# Part 2 - Making Some Maps
+# Part 2 - Making Some Sick Maps
 
 ## QGIS
 
@@ -346,8 +346,150 @@ qtm(epc_sf_clip)
 
 -   Right Clicking on your layer will allow you to zoom to your layer if you can't find it on your map. 
 
--   At this point you can add some contextual information from Zoomstack. You may already have all layers showing, so un-tick most of them and perhaps just leave information such as buildings, railways and roads. Your resulting map may look a little like the one below:
+-   At this point you can add some contextual information from OS Zoomstack. You may already have all layers showing, so un-tick most of them and perhaps just leave information such as buildings, railways, water and roads. Your resulting map may look a little like the one below:
 
 ![](images/epc_and_zoomstack1.png)
-### 
+
+### Mapping EPC Variables
+
+-   Now you have your data loaded, we can explore some of the different variables in the EPC dataset. Let's start with Age.
+
+-   Before we get any further, you should download the QGIS Style File for EPC Building Age Categories - EPC_Building_Age_Categories.qml - from here: <https://github.com/adamdennett/EPC_Analysis_Website/tree/master/qgis_epc_styles>. Save that file (and all of the others in the folder too, if you wish), to a suitable location on your hard-drive.
+
+-   Now, right-click the *epc_coords* layer and click on *Properties* 
+
+![](images/properties.png)
+
+-   When the layer properties window opens, select *symbology* from near the top of the left-hand menu.
+
+-   When the symbology window opens, at the very top, select *Categorised* as we are going to give different categories a specific colour value. 
+
+-   In the Value drop down menu, find the variable *construction_age_band* and select it. 
+
+![](images/epc_symbology_age.png)
+
+-   Now at this point you could choose your own Colour Ramp, number of categories etc, but this can be a little time consuming. To save time, we can load the QGIS Style file I created and apply it to your data.
+
+-   At the very bottom of your layer properties window is a small menu button labelled *Style* - click *Load Style* and the Database Styles Manager will pop up. 
+
+![](images/styles_manager.png)
+
+-   Find the EPC_Building_Age_Categories.qml file you recently downloaded - make sure you only have 'Symbology' ticked and then click the *Load Style* button. 
+
+-   The various messy age categories will now be coloured in roughly spectral order from oldest to newest - with missing ages coloured transparently
+
+![](images/epc_age_map.png)
+
+### Mapping Other Variables
+
+-   Now you have a basic age map, you can try mapping any of your other variables. 
+
+-   Any Numeric Variables you can map using a *Graduated* Colour scheme from the top dropdown in the symbology menu. Any text variable can be mapped with a *Categorised* colour scheme. 
+
+-   We can map energy efficiency with both as there are both numeric (*current_energy_efficiency*) and text (*current_energy_rating*) variables for energy efficiency. 
+
+-   Selecting the numeric *current_energy_efficiency* variable and the graduated colour scheme, we can colour the values according to set ranges and colours by choosing:
+    -   a colour ramp of your choice (below is Magma)
+    -   a number of classes to group by (7 have been selected below)
+    -   a way of choosing the bin sizes for the group (I've chosen Jenks Natural Breaks below)
+    
+-   after choosing these options, clicking the *Classify* button will bin all of your data into the chosen number of classes and colour according to the colour ramp you have chosen, as below. 
+
+![](images/graduated.png)
+
+-   Click the *Apply* and *OK* buttons to see your map.
+
+-   You can experiment with an almost infinite combination of different variables, ranges, ramps and colour schemes. Try some out for different variables in the dataset. You may find that for categorical variables, you have to manually adjust some of the colours and values. 
+
+-   If you want to find out more about playing with symbology, QGIS has some excellent documentation here: <https://docs.qgis.org/3.34/en/docs/training_manual/basic_map/symbology.html>
+
+-   I have created a QGIS Style File which styles the current_energy_efficiency variable according to the values and colours used in the EPC certificate rating - download it from here: <https://github.com/adamdennett/EPC_Analysis_Website/tree/master/qgis_epc_styles> and load in the same way as you did before to map the style to your variable
+
+![](images/epc_energy_map.png)
+
+### Making Your Map Sick!
+
+-   You may have noticed that my map above still looks a bit different to your map. This is probably because you've not styled your OS Open Zoomstack data yet.
+
+#### Styling your Roads
+
+-   Styling your contextual data is done in exactly the same way as styling your EPC Point data. First, right-click a layer you are interested in and slected the *Properties* option. Your Road layer is a good place to start
+
+-   Your Zoomstack data has variables associated with the feature, so, for example, for your roads layer, you could classify your roads by type and colour them in accordingly:
+
+![](images/road_type.png)
+
+-   You can also add labels like the road name to your roads layer using the labels menu in Properties, and selecting the *name* variable, for example: 
+
+![](images/labels.png)
+
+-   For my map, I've chosen to use the default topo road symbol which is available under the single symbol options. 
+
+![](images/topo_road.png)
+
+#### Buildings, Rail and Surface Water
+
+-   You can style your buildings, railway lines, surface water - or indeed any of the other variables in the zoomstack data in a similar way using the symbology options. 
+
+-   The ordnance Survey also have some QGIS stylesheets for Zoomstack that you can download and use if you wanted to be very adventurous - <https://github.com/OrdnanceSurvey/OS-Open-Zoomstack-Stylesheets>
+
+## Finishing and Saving Your Map
+
+-   Once you are happy with your map, you should first save your Project to a safe place on your machine via *Project > Save As* from the top drop down menu. 
+
+-   You are now ready to finish your map with the Print Layout Manager
+
+### Print Layout
+
+#### Adding, moving and rescaling your map
+
+-   Under *Project* in the top menu, select new Print Layout
+
+![](images/print_layout.png)
+
+-   You will be prompted to give your print layout a name, so do this and click OK
+
+-   For a detailed guide on how to use the print layout, visit the QGIS pages here: <https://docs.qgis.org/3.34/en/docs/training_manual/map_composer/map_composer.html> - but below we will learn the basics. 
+
+-   A layout window like the one below should open
+
+![](images/layout_window1.png)
+-   To add your map, you will need to either click the *Add Map* icon on the left or select it from the *Add Item* Dropdown menu
+
+![](images/add_item.png)
+
+-   You will then be able to drag a rectangle onto the blank canvas and your map should appear inside it
+
+![](images/layout_window2.png)
+
+-   You can resize your map either by typing a new scale value into the scale box on the right, or zooming in or out of your live map back in the main QGIS window. 
+
+-   You can move your map around using the Edit > Move Content button and then just clicking and dragging your map
+
+![](images/edit_move.png)
+
+#### Adding and Editing a Legend
+
+-   Using *Add Item > Legend* you can add a legend that will contain all of the layers in your main map
+
+-   On the right-hand side under *Item Properties*, untick the 'Auto Update' box and then by highlighting elements of the legend you don't want any more, these can be removed with the red minus button or re-ordered with the arrow buttons
+
+![](images/layout_window_legend.png)
+-   Items can also be added back in with the green + button. You can also edit the name of your legend with the edit button. 
+
+#### Scale and North Arrow
+
+-   You can now complete your map with a scale and a north arrow using the same *Add Item* drop down menu. Various different styles are available. 
+
+-   Note - Your scale will only be in metres or kilometres if you used British National Grid when you imported your CSV data originally. 
+
+![](images/layout_window_finished.png)
+
+-   When you are happy with your map, you can save it by exporting it as an Image or a PDF via *Layout > Export...* 
+
+![](images/layout_export.png)
+
+-   You should also save your Layout Project via the same Layout drop down in case you want to come back and edit again in the future.  
+
+# Part 3 - Taking the Analysis Further
 

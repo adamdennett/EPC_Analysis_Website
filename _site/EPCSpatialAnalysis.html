@@ -175,7 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#joining-epc-data-to-uprn-data-and-cleaning-for-mapping" id="toc-joining-epc-data-to-uprn-data-and-cleaning-for-mapping" class="nav-link" data-scroll-target="#joining-epc-data-to-uprn-data-and-cleaning-for-mapping">Joining EPC data to UPRN data and cleaning for mapping</a></li>
   <li><a href="#mapping-your-new-data" id="toc-mapping-your-new-data" class="nav-link" data-scroll-target="#mapping-your-new-data">Mapping Your New Data</a></li>
   </ul></li>
-  <li><a href="#part-2---making-some-maps" id="toc-part-2---making-some-maps" class="nav-link" data-scroll-target="#part-2---making-some-maps">Part 2 - Making Some Maps</a>
+  <li><a href="#part-2---making-some-sick-maps" id="toc-part-2---making-some-sick-maps" class="nav-link" data-scroll-target="#part-2---making-some-sick-maps">Part 2 - Making Some Sick Maps</a>
   <ul class="collapse">
   <li><a href="#qgis" id="toc-qgis" class="nav-link" data-scroll-target="#qgis">QGIS</a>
   <ul class="collapse">
@@ -185,8 +185,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#creating-your-map" id="toc-creating-your-map" class="nav-link" data-scroll-target="#creating-your-map">Creating Your Map</a>
   <ul class="collapse">
   <li><a href="#basic-plotting-of-epcs-and-contextual-information" id="toc-basic-plotting-of-epcs-and-contextual-information" class="nav-link" data-scroll-target="#basic-plotting-of-epcs-and-contextual-information">Basic Plotting of EPCs and Contextual Information</a></li>
+  <li><a href="#mapping-epc-variables" id="toc-mapping-epc-variables" class="nav-link" data-scroll-target="#mapping-epc-variables">Mapping EPC Variables</a></li>
+  <li><a href="#mapping-other-variables" id="toc-mapping-other-variables" class="nav-link" data-scroll-target="#mapping-other-variables">Mapping Other Variables</a></li>
+  <li><a href="#making-your-map-sick" id="toc-making-your-map-sick" class="nav-link" data-scroll-target="#making-your-map-sick">Making Your Map Sick!</a></li>
+  </ul></li>
+  <li><a href="#finishing-and-saving-your-map" id="toc-finishing-and-saving-your-map" class="nav-link" data-scroll-target="#finishing-and-saving-your-map">Finishing and Saving Your Map</a>
+  <ul class="collapse">
+  <li><a href="#print-layout" id="toc-print-layout" class="nav-link" data-scroll-target="#print-layout">Print Layout</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#part-3---taking-the-analysis-further" id="toc-part-3---taking-the-analysis-further" class="nav-link" data-scroll-target="#part-3---taking-the-analysis-further">Part 3 - Taking the Analysis Further</a></li>
   </ul>
 </nav>
     </div>
@@ -219,7 +227,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This guide will walk you through the process of downloading, geo-coding and then mapping data from The UK Government’s Department for Levelling Up, Housing and Communities (DLUHC) Domestic Energy Performance Certificate (EPC) Data.</p>
 <p><strong>Part 1</strong> is a guide to downloading EPC and Ordnance Survey’s geo-referenced Unique Property Reference Number (UPRN) data from two APIs and linking the two datasets for mapping using R.</p>
 <p><strong>Part 2</strong> will explain how to load your newly linked data into QGIS and map it, adding additional contextual data from the OS Zoomstack.</p>
-<p>If you are not familiar with R and you want to get straight onto the mapping, download this sample dataset from <a href="https://www.dropbox.com/scl/fi/e7hfs638s4f0yf2z5scux/epc_coords.csv?rlkey=klvqophka7r3o3tsb4sv2nfik&amp;dl=0">here</a> and skip straight down to <a href="#part-2---making-some-maps">Part 2 - Making Some Maps</a></p>
+<p>If you are not familiar with R and you want to get straight onto the mapping, download this sample dataset from <a href="https://www.dropbox.com/scl/fi/e7hfs638s4f0yf2z5scux/epc_coords.csv?rlkey=klvqophka7r3o3tsb4sv2nfik&amp;dl=0">here</a> and skip straight down to [Part 2 - Making Some Maps]</p>
 <section id="part-1---getting-the-data" class="level1">
 <h1>Part 1 - Getting the Data</h1>
 <section id="downloading-r-and-rstudio" class="level2">
@@ -483,8 +491,8 @@ GEOGCS["WGS 84",
 </div>
 </section>
 </section>
-<section id="part-2---making-some-maps" class="level1">
-<h1>Part 2 - Making Some Maps</h1>
+<section id="part-2---making-some-sick-maps" class="level1">
+<h1>Part 2 - Making Some Sick Maps</h1>
 <section id="qgis" class="level2">
 <h2 class="anchored" data-anchor-id="qgis">QGIS</h2>
 <ul>
@@ -553,13 +561,149 @@ GEOGCS["WGS 84",
 <li><p>We can now begin to build our map of domestic energy performance for any town or village in our study area - you could look at the whole study area too, but there are a lot of data points, so zooming in might be best at this stage.</p></li>
 <li><p>In the Layers panel on the left of QGIS, your epc_coords layer should be on the top, if it is not, you can simply left-click and drag it to the top.</p></li>
 <li><p>Right Clicking on your layer will allow you to zoom to your layer if you can’t find it on your map.</p></li>
-<li><p>At this point you can add some contextual information from Zoomstack. You may already have all layers showing, so un-tick most of them and perhaps just leave information such as buildings, railways and roads. Your resulting map may look a little like the one below:</p></li>
+<li><p>At this point you can add some contextual information from OS Zoomstack. You may already have all layers showing, so un-tick most of them and perhaps just leave information such as buildings, railways, water and roads. Your resulting map may look a little like the one below:</p></li>
 </ul>
-<p><img src="images/epc_and_zoomstack1.png" class="img-fluid"> ###</p>
-
-
+<p><img src="images/epc_and_zoomstack1.png" class="img-fluid"></p>
+</section>
+<section id="mapping-epc-variables" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-epc-variables">Mapping EPC Variables</h3>
+<ul>
+<li><p>Now you have your data loaded, we can explore some of the different variables in the EPC dataset. Let’s start with Age.</p></li>
+<li><p>Before we get any further, you should download the QGIS Style File for EPC Building Age Categories - EPC_Building_Age_Categories.qml - from here: <a href="https://github.com/adamdennett/EPC_Analysis_Website/tree/master/qgis_epc_styles" class="uri">https://github.com/adamdennett/EPC_Analysis_Website/tree/master/qgis_epc_styles</a>. Save that file (and all of the others in the folder too, if you wish), to a suitable location on your hard-drive.</p></li>
+<li><p>Now, right-click the <em>epc_coords</em> layer and click on <em>Properties</em></p></li>
+</ul>
+<p><img src="images/properties.png" class="img-fluid"></p>
+<ul>
+<li><p>When the layer properties window opens, select <em>symbology</em> from near the top of the left-hand menu.</p></li>
+<li><p>When the symbology window opens, at the very top, select <em>Categorised</em> as we are going to give different categories a specific colour value.</p></li>
+<li><p>In the Value drop down menu, find the variable <em>construction_age_band</em> and select it.</p></li>
+</ul>
+<p><img src="images/epc_symbology_age.png" class="img-fluid"></p>
+<ul>
+<li><p>Now at this point you could choose your own Colour Ramp, number of categories etc, but this can be a little time consuming. To save time, we can load the QGIS Style file I created and apply it to your data.</p></li>
+<li><p>At the very bottom of your layer properties window is a small menu button labelled <em>Style</em> - click <em>Load Style</em> and the Database Styles Manager will pop up.</p></li>
+</ul>
+<p><img src="images/styles_manager.png" class="img-fluid"></p>
+<ul>
+<li><p>Find the EPC_Building_Age_Categories.qml file you recently downloaded - make sure you only have ‘Symbology’ ticked and then click the <em>Load Style</em> button.</p></li>
+<li><p>The various messy age categories will now be coloured in roughly spectral order from oldest to newest - with missing ages coloured transparently</p></li>
+</ul>
+<p><img src="images/epc_age_map.png" class="img-fluid"></p>
+</section>
+<section id="mapping-other-variables" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-other-variables">Mapping Other Variables</h3>
+<ul>
+<li><p>Now you have a basic age map, you can try mapping any of your other variables.</p></li>
+<li><p>Any Numeric Variables you can map using a <em>Graduated</em> Colour scheme from the top dropdown in the symbology menu. Any text variable can be mapped with a <em>Categorised</em> colour scheme.</p></li>
+<li><p>We can map energy efficiency with both as there are both numeric (<em>current_energy_efficiency</em>) and text (<em>current_energy_rating</em>) variables for energy efficiency.</p></li>
+<li><p>Selecting the numeric <em>current_energy_efficiency</em> variable and the graduated colour scheme, we can colour the values according to set ranges and colours by choosing:</p>
+<ul>
+<li>a colour ramp of your choice (below is Magma)</li>
+<li>a number of classes to group by (7 have been selected below)</li>
+<li>a way of choosing the bin sizes for the group (I’ve chosen Jenks Natural Breaks below)</li>
+</ul></li>
+<li><p>after choosing these options, clicking the <em>Classify</em> button will bin all of your data into the chosen number of classes and colour according to the colour ramp you have chosen, as below.</p></li>
+</ul>
+<p><img src="images/graduated.png" class="img-fluid"></p>
+<ul>
+<li><p>Click the <em>Apply</em> and <em>OK</em> buttons to see your map.</p></li>
+<li><p>You can experiment with an almost infinite combination of different variables, ranges, ramps and colour schemes. Try some out for different variables in the dataset. You may find that for categorical variables, you have to manually adjust some of the colours and values.</p></li>
+<li><p>If you want to find out more about playing with symbology, QGIS has some excellent documentation here: <a href="https://docs.qgis.org/3.34/en/docs/training_manual/basic_map/symbology.html" class="uri">https://docs.qgis.org/3.34/en/docs/training_manual/basic_map/symbology.html</a></p></li>
+<li><p>I have created a QGIS Style File which styles the current_energy_efficiency variable according to the values and colours used in the EPC certificate rating - download it from here: <a href="https://github.com/adamdennett/EPC_Analysis_Website/tree/master/qgis_epc_styles" class="uri">https://github.com/adamdennett/EPC_Analysis_Website/tree/master/qgis_epc_styles</a> and load in the same way as you did before to map the style to your variable</p></li>
+</ul>
+<p><img src="images/epc_energy_map.png" class="img-fluid"></p>
+</section>
+<section id="making-your-map-sick" class="level3">
+<h3 class="anchored" data-anchor-id="making-your-map-sick">Making Your Map Sick!</h3>
+<ul>
+<li>You may have noticed that my map above still looks a bit different to your map. This is probably because you’ve not styled your OS Open Zoomstack data yet.</li>
+</ul>
+<section id="styling-your-roads" class="level4">
+<h4 class="anchored" data-anchor-id="styling-your-roads">Styling your Roads</h4>
+<ul>
+<li><p>Styling your contextual data is done in exactly the same way as styling your EPC Point data. First, right-click a layer you are interested in and slected the <em>Properties</em> option. Your Road layer is a good place to start</p></li>
+<li><p>Your Zoomstack data has variables associated with the feature, so, for example, for your roads layer, you could classify your roads by type and colour them in accordingly:</p></li>
+</ul>
+<p><img src="images/road_type.png" class="img-fluid"></p>
+<ul>
+<li>You can also add labels like the road name to your roads layer using the labels menu in Properties, and selecting the <em>name</em> variable, for example:</li>
+</ul>
+<p><img src="images/labels.png" class="img-fluid"></p>
+<ul>
+<li>For my map, I’ve chosen to use the default topo road symbol which is available under the single symbol options.</li>
+</ul>
+<p><img src="images/topo_road.png" class="img-fluid"></p>
+</section>
+<section id="buildings-rail-and-surface-water" class="level4">
+<h4 class="anchored" data-anchor-id="buildings-rail-and-surface-water">Buildings, Rail and Surface Water</h4>
+<ul>
+<li><p>You can style your buildings, railway lines, surface water - or indeed any of the other variables in the zoomstack data in a similar way using the symbology options.</p></li>
+<li><p>The ordnance Survey also have some QGIS stylesheets for Zoomstack that you can download and use if you wanted to be very adventurous - <a href="https://github.com/OrdnanceSurvey/OS-Open-Zoomstack-Stylesheets" class="uri">https://github.com/OrdnanceSurvey/OS-Open-Zoomstack-Stylesheets</a></p></li>
+</ul>
 </section>
 </section>
+</section>
+<section id="finishing-and-saving-your-map" class="level2">
+<h2 class="anchored" data-anchor-id="finishing-and-saving-your-map">Finishing and Saving Your Map</h2>
+<ul>
+<li><p>Once you are happy with your map, you should first save your Project to a safe place on your machine via <em>Project &gt; Save As</em> from the top drop down menu.</p></li>
+<li><p>You are now ready to finish your map with the Print Layout Manager</p></li>
+</ul>
+<section id="print-layout" class="level3">
+<h3 class="anchored" data-anchor-id="print-layout">Print Layout</h3>
+<section id="adding-moving-and-rescaling-your-map" class="level4">
+<h4 class="anchored" data-anchor-id="adding-moving-and-rescaling-your-map">Adding, moving and rescaling your map</h4>
+<ul>
+<li>Under <em>Project</em> in the top menu, select new Print Layout</li>
+</ul>
+<p><img src="images/print_layout.png" class="img-fluid"></p>
+<ul>
+<li><p>You will be prompted to give your print layout a name, so do this and click OK</p></li>
+<li><p>For a detailed guide on how to use the print layout, visit the QGIS pages here: <a href="https://docs.qgis.org/3.34/en/docs/training_manual/map_composer/map_composer.html" class="uri">https://docs.qgis.org/3.34/en/docs/training_manual/map_composer/map_composer.html</a> - but below we will learn the basics.</p></li>
+<li><p>A layout window like the one below should open</p></li>
+</ul>
+<p><img src="images/layout_window1.png" class="img-fluid"> - To add your map, you will need to either click the <em>Add Map</em> icon on the left or select it from the <em>Add Item</em> Dropdown menu</p>
+<p><img src="images/add_item.png" class="img-fluid"></p>
+<ul>
+<li>You will then be able to drag a rectangle onto the blank canvas and your map should appear inside it</li>
+</ul>
+<p><img src="images/layout_window2.png" class="img-fluid"></p>
+<ul>
+<li><p>You can resize your map either by typing a new scale value into the scale box on the right, or zooming in or out of your live map back in the main QGIS window.</p></li>
+<li><p>You can move your map around using the Edit &gt; Move Content button and then just clicking and dragging your map</p></li>
+</ul>
+<p><img src="images/edit_move.png" class="img-fluid"></p>
+</section>
+<section id="adding-and-editing-a-legend" class="level4">
+<h4 class="anchored" data-anchor-id="adding-and-editing-a-legend">Adding and Editing a Legend</h4>
+<ul>
+<li><p>Using <em>Add Item &gt; Legend</em> you can add a legend that will contain all of the layers in your main map</p></li>
+<li><p>On the right-hand side under <em>Item Properties</em>, untick the ‘Auto Update’ box and then by highlighting elements of the legend you don’t want any more, these can be removed with the red minus button or re-ordered with the arrow buttons</p></li>
+</ul>
+<p><img src="images/layout_window_legend.png" class="img-fluid"> - Items can also be added back in with the green + button. You can also edit the name of your legend with the edit button.</p>
+</section>
+<section id="scale-and-north-arrow" class="level4">
+<h4 class="anchored" data-anchor-id="scale-and-north-arrow">Scale and North Arrow</h4>
+<ul>
+<li><p>You can now complete your map with a scale and a north arrow using the same <em>Add Item</em> drop down menu. Various different styles are available.</p></li>
+<li><p>Note - Your scale will only be in metres or kilometres if you used British National Grid when you imported your CSV data originally.</p></li>
+</ul>
+<p><img src="images/layout_window_finished.png" class="img-fluid"></p>
+<ul>
+<li>When you are happy with your map, you can save it by exporting it as an Image or a PDF via <em>Layout &gt; Export…</em></li>
+</ul>
+<p><img src="images/layout_export.png" class="img-fluid"></p>
+<ul>
+<li>You should also save your Layout Project via the same Layout drop down in case you want to come back and edit again in the future.</li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<section id="part-3---taking-the-analysis-further" class="level1">
+<h1>Part 3 - Taking the Analysis Further</h1>
+
+
 </section>
 
 </main> <!-- /main -->
