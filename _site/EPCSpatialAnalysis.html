@@ -669,7 +669,10 @@ GEOGCS["WGS 84",
 <li><p>For a detailed guide on how to use the print layout, visit the QGIS pages here: <a href="https://docs.qgis.org/3.34/en/docs/training_manual/map_composer/map_composer.html" class="uri">https://docs.qgis.org/3.34/en/docs/training_manual/map_composer/map_composer.html</a> - but below we will learn the basics.</p></li>
 <li><p>A layout window like the one below should open</p></li>
 </ul>
-<p><img src="images/layout_window1.png" class="img-fluid"> - To add your map, you will need to either click the <em>Add Map</em> icon on the left or select it from the <em>Add Item</em> Dropdown menu</p>
+<p><img src="images/layout_window1.png" class="img-fluid"></p>
+<ul>
+<li>To add your map, you will need to either click the <em>Add Map</em> icon on the left or select it from the <em>Add Item</em> Dropdown menu</li>
+</ul>
 <p><img src="images/add_item.png" class="img-fluid"></p>
 <ul>
 <li>You will then be able to drag a rectangle onto the blank canvas and your map should appear inside it</li>
@@ -687,7 +690,10 @@ GEOGCS["WGS 84",
 <li><p>Using <strong><em>Add Item &gt; Legend</em></strong> you can add a legend that will contain all of the layers in your main map</p></li>
 <li><p>On the right-hand side under <strong><em>Item Properties</em></strong>, untick the ‘Auto Update’ box and then by highlighting elements of the legend you don’t want any more, these can be removed with the red minus button or re-ordered with the arrow buttons</p></li>
 </ul>
-<p><img src="images/layout_window_legend.png" class="img-fluid"> - Items can also be added back in with the green + button. You can also edit the name of your legend with the edit button.</p>
+<p><img src="images/layout_window_legend.png" class="img-fluid"></p>
+<ul>
+<li>Items can also be added back in with the green + button. You can also edit the name of your legend with the edit button.</li>
+</ul>
 </section>
 <section id="scale-and-north-arrow" class="level4">
 <h4 class="anchored" data-anchor-id="scale-and-north-arrow">Scale and North Arrow</h4>
@@ -728,9 +734,10 @@ GEOGCS["WGS 84",
 <li><p>To do this, we can take advantage of some of the analysis funcions built into QGIS in the <strong><em>Processing Toolbox</em></strong></p></li>
 <li><p>First of all, however, we need to select the buildings we want to include in our analysis. We can do this with the <strong><em>Select Features</em></strong> button at the top of the map window</p></li>
 </ul>
-<p><img src="images/select_features.png" class="img-fluid"> - You can use any of the options that pop up - the top option just allows you to draw a rectangular box, so we will use that for now. If you want something a bit more accurate, the other options will probably work well</p>
+<p><img src="images/select_features.png" class="img-fluid"></p>
 <ul>
-<li>Select the tool you want and make sure you have your <strong><em>epc_coords</em></strong> layer selected (clicked on) as the active layer. Draw or drag your selection shape over the area you are interested in and everything within your shape should turn yellow, indicating it has been selected</li>
+<li><p>You can use any of the options that pop up - the top option just allows you to draw a rectangular box, so we will use that for now. If you want something a bit more accurate, the other options will probably work well</p></li>
+<li><p>Select the tool you want and make sure you have your <strong><em>epc_coords</em></strong> layer selected (clicked on) as the active layer. Draw or drag your selection shape over the area you are interested in and everything within your shape should turn yellow, indicating it has been selected</p></li>
 </ul>
 <p><img src="images/selected_features.png" class="img-fluid"></p>
 <ul>
@@ -741,7 +748,10 @@ GEOGCS["WGS 84",
 <ul>
 <li>In the Mean and Standard Deviation Plot dialogue box, try filling in the parameters as below before clicking <strong><em>Run</em></strong></li>
 </ul>
-<p><img src="images/mean_std_dv_plot_params.png" class="img-fluid"> - In the results viewer in the bottom right, double click the plot you have just created and it will open up in a web browser on your computer</p>
+<p><img src="images/mean_std_dv_plot_params.png" class="img-fluid"></p>
+<ul>
+<li>In the results viewer in the bottom right, double click the plot you have just created and it will open up in a web browser on your computer</li>
+</ul>
 <p><img src="images/boxplot.png" class="img-fluid"></p>
 <ul>
 <li>Hovering over the boxplot will reveal the mean and median EPC values as well as the inter-quartile range (where 50% of the properties fall between) along with some minimum and maximum values.</li>
@@ -766,8 +776,9 @@ GEOGCS["WGS 84",
 <ul>
 <li>Fill out the Dialoge Box that opens just like the one below:</li>
 </ul>
-<p><img src="images/field_calc.png" class="img-fluid"> - Call your Output Field <strong>upgrade_potential</strong>. We will make it a decimal (double) type. In the expression box, double click the field name for <strong><em>“current_energy_efficiency”</em></strong> first under <strong><em>Fields and Values</em></strong>, insert a minus symbol using the buttons at the bottom and then <strong><em>“potential_energy_efficiency”</em></strong></p>
+<p><img src="images/field_calc.png" class="img-fluid"></p>
 <ul>
+<li><p>Call your Output Field <strong>upgrade_potential</strong>. We will make it a decimal (double) type. In the expression box, double click the field name for <strong><em>“current_energy_efficiency”</em></strong> first under <strong><em>Fields and Values</em></strong>, insert a minus symbol using the buttons at the bottom and then <strong><em>“potential_energy_efficiency”</em></strong></p></li>
 <li><p>When that expression is complete, click <strong><em>OK</em></strong> and a new field called <em>upgrade_potential</em> should be calculated at the end of your <strong><em>epc_coords</em></strong> file.</p></li>
 <li><p>You can now generate a choropleth map of your new variable to see where the places with the most potential for improving their energy efficiency lie</p></li>
 </ul>

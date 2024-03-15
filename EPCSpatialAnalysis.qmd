@@ -11,7 +11,7 @@ This guide will walk you through the process of downloading, geo-coding and then
 
 **Part 2** will explain how to load your newly linked data into QGIS and map it, adding additional contextual data from the OS Zoomstack.
 
-If you are not familiar with R and you want to get straight onto the mapping, download this sample dataset from [here](https://www.dropbox.com/scl/fi/e7hfs638s4f0yf2z5scux/epc_coords.csv?rlkey=klvqophka7r3o3tsb4sv2nfik&dl=0) and skip straight down to [Part 2 - Making Some Maps]
+If you are not familiar with R and you want to get straight onto the mapping, [download this sample dataset via this link](https://www.dropbox.com/scl/fi/e7hfs638s4f0yf2z5scux/epc_coords.csv?rlkey=klvqophka7r3o3tsb4sv2nfik&dl=0) and skip straight down to [Part 2 - Making Some Sick Maps]
 
 # Part 1 - Getting the Data
 
@@ -340,11 +340,11 @@ qtm(epc_sf_clip)
 
 ### Basic Plotting of EPCs and Contextual Information
 
--   We can now begin to build our map of domestic energy performance for any town or village in our study area - you could look at the whole study area too, but there are a lot of data points, so zooming in might be best at this stage. 
+-   We can now begin to build our map of domestic energy performance for any town or village in our study area - you could look at the whole study area too, but there are a lot of data points, so zooming in might be best at this stage.
 
--   In the Layers panel on the left of QGIS, your epc_coords layer should be on the top, if it is not, you can simply left-click and drag it to the top. 
+-   In the Layers panel on the left of QGIS, your epc_coords layer should be on the top, if it is not, you can simply left-click and drag it to the top.
 
--   Right Clicking on your layer will allow you to zoom to your layer if you can't find it on your map. 
+-   Right Clicking on your layer will allow you to zoom to your layer if you can't find it on your map.
 
 -   At this point you can add some contextual information from OS Zoomstack. You may already have all layers showing, so un-tick most of them and perhaps just leave information such as buildings, railways, water and roads. Your resulting map may look a little like the one below:
 
@@ -356,25 +356,25 @@ qtm(epc_sf_clip)
 
 -   Before we get any further, you should download the QGIS Style File for EPC Building Age Categories - EPC_Building_Age_Categories.qml - from here: <https://github.com/adamdennett/EPC_Analysis_Website/tree/master/qgis_epc_styles>. Save that file (and all of the others in the folder too, if you wish), to a suitable location on your hard-drive.
 
--   Now, right-click the *epc_coords* layer and click on ***Properties*** 
+-   Now, right-click the *epc_coords* layer and click on ***Properties***
 
 ![](images/properties.png)
 
 -   When the layer properties window opens, select ***symbology*** from near the top of the left-hand menu.
 
--   When the symbology window opens, at the very top, select ***Categorised*** as we are going to give different categories a specific colour value. 
+-   When the symbology window opens, at the very top, select ***Categorised*** as we are going to give different categories a specific colour value.
 
--   In the Value drop down menu, find the variable *construction_age_band* and select it. 
+-   In the Value drop down menu, find the variable *construction_age_band* and select it.
 
 ![](images/epc_symbology_age.png)
 
 -   Now at this point you could choose your own Colour Ramp, number of categories etc, but this can be a little time consuming. To save time, we can load the QGIS Style file I created and apply it to your data.
 
--   At the very bottom of your layer properties window is a small menu button labelled ***Style*** - click *Load Style* and the Database Styles Manager will pop up. 
+-   At the very bottom of your layer properties window is a small menu button labelled ***Style*** - click *Load Style* and the Database Styles Manager will pop up.
 
 ![](images/styles_manager.png)
 
--   Find the EPC_Building_Age_Categories.qml file you recently downloaded - make sure you only have 'Symbology' ticked and then click the *Load Style* button. 
+-   Find the EPC_Building_Age_Categories.qml file you recently downloaded - make sure you only have 'Symbology' ticked and then click the *Load Style* button.
 
 -   The various messy age categories will now be coloured in roughly spectral order from oldest to newest - with missing ages coloured transparently
 
@@ -382,24 +382,25 @@ qtm(epc_sf_clip)
 
 ### Mapping Other Variables
 
--   Now you have a basic age map, you can try mapping any of your other variables. 
+-   Now you have a basic age map, you can try mapping any of your other variables.
 
--   Any Numeric Variables you can map using a ***Graduated*** Colour scheme from the top dropdown in the symbology menu. Any text variable can be mapped with a ***Categorised*** colour scheme. 
+-   Any Numeric Variables you can map using a ***Graduated*** Colour scheme from the top dropdown in the symbology menu. Any text variable can be mapped with a ***Categorised*** colour scheme.
 
--   We can map energy efficiency with both as there are both numeric (*current_energy_efficiency*) and text (*current_energy_rating*) variables for energy efficiency. 
+-   We can map energy efficiency with both as there are both numeric (*current_energy_efficiency*) and text (*current_energy_rating*) variables for energy efficiency.
 
 -   Selecting the numeric *current_energy_efficiency* variable and the graduated colour scheme, we can colour the values according to set ranges and colours by choosing:
+
     -   a colour ramp of your choice (below is Magma)
     -   a number of classes to group by (7 have been selected below)
     -   a way of choosing the bin sizes for the group (I've chosen Jenks Natural Breaks below)
-    
--   after choosing these options, clicking the ***Classify*** button will bin all of your data into the chosen number of classes and colour according to the colour ramp you have chosen, as below. 
+
+-   after choosing these options, clicking the ***Classify*** button will bin all of your data into the chosen number of classes and colour according to the colour ramp you have chosen, as below.
 
 ![](images/graduated.png)
 
 -   Click the ***Apply*** and ***OK*** buttons to see your map.
 
--   You can experiment with an almost infinite combination of different variables, ranges, ramps and colour schemes. Try some out for different variables in the dataset. You may find that for categorical variables, you have to manually adjust some of the colours and values. 
+-   You can experiment with an almost infinite combination of different variables, ranges, ramps and colour schemes. Try some out for different variables in the dataset. You may find that for categorical variables, you have to manually adjust some of the colours and values.
 
 -   If you want to find out more about playing with symbology, QGIS has some excellent documentation here: <https://docs.qgis.org/3.34/en/docs/training_manual/basic_map/symbology.html>
 
@@ -419,23 +420,23 @@ qtm(epc_sf_clip)
 
 ![](images/road_type.png)
 
--   You can also add labels like the road name to your roads layer using the labels menu in Properties, and selecting the *name* variable, for example: 
+-   You can also add labels like the road name to your roads layer using the labels menu in Properties, and selecting the *name* variable, for example:
 
 ![](images/labels.png)
 
--   For my map, I've chosen to use the default topo road symbol which is available under the single symbol options. 
+-   For my map, I've chosen to use the default topo road symbol which is available under the single symbol options.
 
 ![](images/topo_road.png)
 
 #### Buildings, Rail and Surface Water
 
--   You can style your buildings, railway lines, surface water - or indeed any of the other variables in the zoomstack data in a similar way using the symbology options. 
+-   You can style your buildings, railway lines, surface water - or indeed any of the other variables in the zoomstack data in a similar way using the symbology options.
 
 -   The ordnance Survey also have some QGIS stylesheets for Zoomstack that you can download and use if you wanted to be very adventurous - <https://github.com/OrdnanceSurvey/OS-Open-Zoomstack-Stylesheets>
 
 ## Finishing and Saving Your Map
 
--   Once you are happy with your map, you should first save your Project to a safe place on your machine via ***Project > Save As*** from the top drop down menu. 
+-   Once you are happy with your map, you should first save your Project to a safe place on your machine via ***Project \> Save As*** from the top drop down menu.
 
 -   You are now ready to finish your map with the Print Layout Manager
 
@@ -449,11 +450,12 @@ qtm(epc_sf_clip)
 
 -   You will be prompted to give your print layout a name, so do this and click OK
 
--   For a detailed guide on how to use the print layout, visit the QGIS pages here: <https://docs.qgis.org/3.34/en/docs/training_manual/map_composer/map_composer.html> - but below we will learn the basics. 
+-   For a detailed guide on how to use the print layout, visit the QGIS pages here: <https://docs.qgis.org/3.34/en/docs/training_manual/map_composer/map_composer.html> - but below we will learn the basics.
 
 -   A layout window like the one below should open
 
 ![](images/layout_window1.png)
+
 -   To add your map, you will need to either click the *Add Map* icon on the left or select it from the *Add Item* Dropdown menu
 
 ![](images/add_item.png)
@@ -462,34 +464,35 @@ qtm(epc_sf_clip)
 
 ![](images/layout_window2.png)
 
--   You can resize your map either by typing a new scale value into the scale box on the right, or zooming in or out of your live map back in the main QGIS window. 
+-   You can resize your map either by typing a new scale value into the scale box on the right, or zooming in or out of your live map back in the main QGIS window.
 
--   You can move your map around using the Edit > Move Content button and then just clicking and dragging your map
+-   You can move your map around using the ***Edit \> Move Content*** button and then just clicking and dragging your map
 
 ![](images/edit_move.png)
 
 #### Adding and Editing a Legend
 
--   Using ***Add Item > Legend*** you can add a legend that will contain all of the layers in your main map
+-   Using ***Add Item \> Legend*** you can add a legend that will contain all of the layers in your main map
 
 -   On the right-hand side under ***Item Properties***, untick the 'Auto Update' box and then by highlighting elements of the legend you don't want any more, these can be removed with the red minus button or re-ordered with the arrow buttons
 
 ![](images/layout_window_legend.png)
--   Items can also be added back in with the green + button. You can also edit the name of your legend with the edit button. 
+
+-   Items can also be added back in with the green + button. You can also edit the name of your legend with the edit button.
 
 #### Scale and North Arrow
 
--   You can now complete your map with a scale and a north arrow using the same ***Add Item*** drop down menu. Various different styles are available. 
+-   You can now complete your map with a scale and a north arrow using the same ***Add Item*** drop down menu. Various different styles are available.
 
--   Note - Your scale will only be in metres or kilometres if you used British National Grid when you imported your CSV data originally. 
+-   Note - Your scale will only be in metres or kilometres if you used British National Grid when you imported your CSV data originally.
 
 ![](images/layout_window_finished.png)
 
--   When you are happy with your map, you can save it by exporting it as an Image or a PDF via ***Layout > Export...*** 
+-   When you are happy with your map, you can save it by exporting it as an Image or a PDF via ***Layout \> Export...***
 
 ![](images/layout_export.png)
 
--   You should also save your Layout Project via the same Layout drop down in case you want to come back and edit again in the future.  
+-   You should also save your Layout Project via the same Layout drop down in case you want to come back and edit again in the future.
 
 # Part 3 - Taking the Analysis Further
 
@@ -502,7 +505,7 @@ qtm(epc_sf_clip)
 -   There are lots of further questions you could ask of your data such as:
     -   What is the average Energy Efficiency of Houses in my town/village?
     -   Where are the houses that could make the biggest energy efficiency improvements?
-    
+
 ### Calculating the average energy efficiency for homes in your town/village
 
 -   To do this, we can take advantage of some of the analysis funcions built into QGIS in the ***Processing Toolbox***
@@ -510,6 +513,7 @@ qtm(epc_sf_clip)
 -   First of all, however, we need to select the buildings we want to include in our analysis. We can do this with the ***Select Features*** button at the top of the map window
 
 ![](images/select_features.png)
+
 -   You can use any of the options that pop up - the top option just allows you to draw a rectangular box, so we will use that for now. If you want something a bit more accurate, the other options will probably work well
 
 -   Select the tool you want and make sure you have your ***epc_coords*** layer selected (clicked on) as the active layer. Draw or drag your selection shape over the area you are interested in and everything within your shape should turn yellow, indicating it has been selected
@@ -525,11 +529,12 @@ qtm(epc_sf_clip)
 -   In the Mean and Standard Deviation Plot dialogue box, try filling in the parameters as below before clicking ***Run***
 
 ![](images/mean_std_dv_plot_params.png)
+
 -   In the results viewer in the bottom right, double click the plot you have just created and it will open up in a web browser on your computer
 
 ![](images/boxplot.png)
 
--   Hovering over the boxplot will reveal the mean and median EPC values as well as the inter-quartile range (where 50% of the properties fall between) along with some minimum and maximum values. 
+-   Hovering over the boxplot will reveal the mean and median EPC values as well as the inter-quartile range (where 50% of the properties fall between) along with some minimum and maximum values.
 
 ### Where are the homes that could make the biggest energy efficiency improvements?
 
@@ -552,6 +557,7 @@ qtm(epc_sf_clip)
 -   Fill out the Dialoge Box that opens just like the one below:
 
 ![](images/field_calc.png)
+
 -   Call your Output Field **upgrade_potential**. We will make it a decimal (double) type. In the expression box, double click the field name for ***"current_energy_efficiency"*** first under ***Fields and Values***, insert a minus symbol using the buttons at the bottom and then ***"potential_energy_efficiency"***
 
 -   When that expression is complete, click ***OK*** and a new field called *upgrade_potential* should be calculated at the end of your ***epc_coords*** file.
@@ -560,7 +566,6 @@ qtm(epc_sf_clip)
 
 ![](images/upgrade_potential.png)
 
--   Using the Information Icon ![](images/info.png) we can explore places with the most potential and find out how much they could improve their energy efficiency and what they might do to improve - e.g. Install Double Glazing or are more efficient heating system. 
+-   Using the Information Icon ![](images/info.png) we can explore places with the most potential and find out how much they could improve their energy efficiency and what they might do to improve - e.g. Install Double Glazing or are more efficient heating system.
 
 ![](images/improvements.png)
-
