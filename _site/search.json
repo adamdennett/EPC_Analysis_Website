@@ -18,7 +18,7 @@
     "href": "EPCSpatialAnalysis.html",
     "title": "Spatial Analysis of Building Energy Performance",
     "section": "",
-    "text": "This guide will walk you through the process of downloading, geo-coding and then mapping data from The UK Government’s Department for Levelling Up, Housing and Communities (DLUHC) Domestic Energy Performance Certificate (EPC) Data.\nPart 1 is a guide to downloading EPC and Ordnance Survey’s geo-referenced Unique Property Reference Number (UPRN) data from two APIs and linking the two datasets for mapping using R.\nPart 2 will explain how to load your newly linked data into QGIS and map it, adding additional contextual data from the OS Zoomstack.\nIf you are not familiar with R and you want to get straight onto the mapping, download this sample dataset from here and skip straight down to [Part 2 - Making Some Maps]"
+    "text": "This guide will walk you through the process of downloading, geo-coding and then mapping data from The UK Government’s Department for Levelling Up, Housing and Communities (DLUHC) Domestic Energy Performance Certificate (EPC) Data.\nPart 1 is a guide to downloading EPC and Ordnance Survey’s geo-referenced Unique Property Reference Number (UPRN) data from two APIs and linking the two datasets for mapping using R.\nPart 2 will explain how to load your newly linked data into QGIS and map it, adding additional contextual data from the OS Zoomstack.\nIf you are not familiar with R and you want to get straight onto the mapping, download this sample dataset via this link and skip straight down to Part 2 - Making Some Sick Maps"
   },
   {
     "objectID": "EPCSpatialAnalysis.html#downloading-r-and-rstudio",
