@@ -1,5 +1,5 @@
 ---
-title: "Spatial Analysis of Building Energy Performance"
+title: "Data Download and Mapping Workshop"
 author: "Adam Dennett"
 format: html
 editor: visual

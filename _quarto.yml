@@ -4,14 +4,26 @@ project:
 website:
   title: "Spatial Analysis of EPC Data"
   navbar:
+    background: primary
     left:
-      - text: Home
-        file: index.qmd
       - EPCSpatialAnalysis.qmd
+    right:
+      - icon: person-circle
+        href: https://adamdennett.netlify.app/
+      - icon: twitter
+        href: https://twitter.com/adam_dennett
+      - icon: github
+        menu:
+          - text: Source Code
+            url:  https://github.com/adamdennett/EPC_Analysis_Website
+          - text: Report a Bug
+            url:  https://github.com/adamdennett/EPC_Analysis_Website/issues
+  repo-url: https://github.com/adamdennett/EPC_Analysis_Website
+  repo-actions: [source, issue]
 
 format:
   html:
-    theme: cosmo
+    theme: minty
     css: styles.css
     toc: true
 
