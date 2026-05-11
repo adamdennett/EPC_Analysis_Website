@@ -12,3 +12,5 @@
 keys.r
 output.csv
 epc_coords.csv
+# Claude Code worktrees (never track these)
+.claude/
